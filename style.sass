@@ -1,0 +1,125 @@
+$font-stack:  Helvetica, Arial, sans-serif
+$serif-stack: Georgia, Times, serif
+$primary-color:   #333
+$aside-style: italic
+
+// Grid width
+$full: col-start 3 / 10
+
+body
+  font-family: $font-stack
+  color: $primary-color
+  line-height: 1.6rem
+  text-align: justify
+  margin: 10px 0 25px 0
+
+h1, h2, h3, h4, h5, h6
+  font-family: $serif-stack
+  margin: 0
+  padding: 0
+
+h1
+  line-height: 3.0rem
+  font-size: 2.8rem
+
+h2
+  line-height: 2.0rem
+  font-size: 1.8rem
+  margin: 1em 0 0 0
+
+.grid
+  display: grid
+  grid-template-columns: repeat(12, [col-start] 1fr)
+  grid-gap: 20px
+
+.header
+  padding: 0 0 0 20px
+  grid-column: 3 / span 7
+  background-color: crimson
+  clip-path: polygon(100% 0, 100% 75%, 90% 100%, 0 100%, 0 0)
+
+  &__text
+    font-family: $font-stack
+    grid-column: 3 / 5
+    color:#fff
+    font-weight: 100
+
+    &--big
+      font-weight: 600
+      font-family: $serif-stack
+
+      h1
+        margin: 1em 0 0 0
+
+  .header__nav
+    grid-column: 3 / span 11
+
+    .list
+      list-style-type: none
+      display: inline
+      margin-left: 0
+
+      .list__item
+        display: inline-block
+        margin-right: 10px
+
+.grid__content
+  font-family: $font-stack
+  grid-column: col-start 3 / 8
+
+  &--full
+    grid-column: col-start 3 / 10
+
+
+  &--pull
+    grid-column: col-start 3 / 10
+    font-size: 1.4rem
+    font-family: $serif-stack
+    font-style: italic
+    font-weight: 800
+    text-align: center
+
+  &--aside
+    grid-column: col-start 8 / 10
+    background-color: #efefef
+    font-style: $aside-style
+    font-family: $serif-stack
+    font-weight: 800
+    text-align: left
+
+    p
+      padding: 0 10px 0 10px
+
+.footer
+  grid-column: col-start 3 / span 7
+  height: 65px
+  background-color: crimson
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%, 0 35%)
+
+  ul
+    padding-left: 0
+
+  &__list
+    list-style-type: none
+    text-align: center
+    align-self: center
+
+  &__link
+    margin-right: 25px
+    display: inline-block
+
+    a
+      font-family: $serif-stack
+      color: #efefef
+
+    // &::after
+    //   content: ""
+    //   top: 0
+    //   left: 0
+    //   height: 100%
+    //   width: 100%
+    //   background-color: crimson
+    //   clip-path: polygon(100% 0, 100% 65%, 65% 100%, 0 100%,0 0)
+    //   z-index: -1
+    //   grid-column: inherit
+    //   position: absolute
